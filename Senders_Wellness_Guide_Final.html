@@ -1,0 +1,1279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Senders Pediatrics - 2 Week Wellness Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=Inter:wght@400;600;700;800;900&family=Yellowtail&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --green: #087337;
+      --deep: #00451f;
+      --line: #9dcc7d;
+
+      --blue: #0c6fc0;
+      --blue-line: #70bcff;
+
+      --purple: #6a38cc;
+      --purple-line: #bd86ff;
+
+      --orange: #ee7200;
+      --orange-line: #f0a344;
+
+      --pink: #e31b55;
+      --ink: #111111;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #d8d8d8;
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 10px;
+      text-align: center;
+      background: #ffffff;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .toolbar button {
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--green);
+      color: #ffffff;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    /*
+      Portrait US Letter page.
+      The four primary sections are tall vertical columns.
+    */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      margin: 16px auto;
+      padding: 0.12in 0.15in 0.10in;
+
+      display: grid;
+      grid-template-rows:
+        1.45in
+        4.82in
+        1.46in
+        0.96in
+        0.76in
+        0.27in;
+      gap: 0.065in;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          130deg,
+          #fffefa 0%,
+          #fffdf8 58%,
+          #fff8e9 100%
+        );
+
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .top {
+      position: relative;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 2.0in 1fr;
+      align-items: center;
+      gap: 0.22in;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      height:100%;
+    }
+
+    .brandLogo {
+      display:block;
+      width:1.95in;
+      height:auto;
+      object-fit:contain;
+      object-position:left center;
+    }
+
+    .headerCopy {
+      position: relative;
+      min-width: 0;
+      padding-top: 0.06in;
+    }
+
+    .stageBadge{
+      position:absolute;
+      top:0;
+      right:0;
+      min-width:260px;
+      padding:14px 42px;
+      border-radius:999px;
+      background:#087337;
+      color:#fff;
+      font-size:22px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-align:center;
+      text-transform:uppercase;
+      box-shadow:0 8px 18px rgba(0,0,0,.15);
+    }
+
+    .script {
+      margin: 0 1.82in 0.005in 0;
+
+      color: var(--green);
+      font-family: Yellowtail, cursive;
+      font-size: 26px;
+      line-height: 0.95;
+    }
+
+    .wellness {
+      margin: 0 0 0.045in;
+
+      color: var(--deep);
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 52px;
+      line-height: 0.82;
+      letter-spacing: -0.035em;
+    }
+
+    .tagline {
+      max-width: 4.65in;
+
+      color: #222222;
+      font-size: 13.3px;
+      line-height: 1.25;
+    }
+
+    .headerRule {
+      display:none;
+      width: 100%;
+      margin-top: 0.09in;
+
+      display: flex;
+      align-items: center;
+      gap: 0.12in;
+
+      color: #5f9b43;
+    }
+
+    .headerRule::before,
+    .headerRule::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: #76a76b;
+    }
+
+    /* =========================================================
+       FOUR VERTICAL COLUMNS
+    ========================================================= */
+
+    .cardsGrid {
+      min-height: 0;
+
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.075in;
+    }
+
+    .categoryCard {
+      min-width: 0;
+      min-height: 0;
+
+      padding: 0.17in 0.105in 0.105in;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1.35px solid;
+      border-radius: 0.13in;
+
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .categoryCard.growing {
+      color: var(--green);
+      border-color: var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #f5ffec 0%,
+          #ffffff 76%
+        );
+    }
+
+    .categoryCard.sleep {
+      color: var(--blue);
+      border-color: var(--blue-line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #eef8ff 0%,
+          #ffffff 76%
+        );
+    }
+
+    .categoryCard.development {
+      color: var(--purple);
+      border-color: var(--purple-line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #faf4ff 0%,
+          #ffffff 76%
+        );
+    }
+
+    .categoryCard.fussiness {
+      color: var(--orange);
+      border-color: var(--orange-line);
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff7ed 0%,
+          #ffffff 76%
+        );
+    }
+
+    .cardHeading {
+      min-height: 0.46in;
+      margin-bottom: 0.11in;
+
+      display: flex;
+      align-items: center;
+      gap: 0.065in;
+
+      font-size: 16.5px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      white-space: nowrap;
+    }
+
+    .development .cardHeading {
+      font-size: 14.4px;
+      letter-spacing: -0.035em;
+    }
+
+    .cardHeadingIcon {
+      flex: 0 0 auto;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .cardItems {
+      min-height: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.125in;
+    }
+
+    .item {
+      min-width: 0;
+
+      display: grid;
+      grid-template-columns: 0.30in minmax(0, 1fr);
+      align-items: start;
+      gap: 0.065in;
+    }
+
+    .item:empty {
+      display: none;
+    }
+
+    .itemIcon {
+      padding-top: 0.005in;
+
+      font-size: 20px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .itemText {
+      color: #111111;
+
+      font-size: 9.4px;
+      line-height: 1.28;
+
+      overflow-wrap: anywhere;
+    }
+
+    .itemText b {
+      font-weight: 900;
+    }
+
+    .cardTip {
+      margin-top: auto;
+      padding: 0.105in 0.085in;
+
+      border: 1.25px solid currentColor;
+      border-radius: 0.10in;
+
+      background: rgba(255, 255, 255, 0.75);
+      color: inherit;
+
+      overflow: hidden;
+    }
+
+    .cardTip strong {
+      display: block;
+      margin-bottom: 0.055in;
+
+      font-size: 9.7px;
+      line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .cardTip p {
+      margin: 0;
+
+      color: #111111;
+      font-size: 9px;
+      line-height: 1.27;
+    }
+
+    /* =========================================================
+       FEEDING AND MEDICATIONS
+    ========================================================= */
+
+    .lower {
+      min-height: 0;
+
+      display: grid;
+      grid-template-columns: 1fr 1.10fr;
+      gap: 0.08in;
+    }
+
+    .box {
+      position: relative;
+      min-height: 0;
+
+      padding: 0.085in 0.095in;
+
+      overflow: hidden;
+
+      border: 1.25px solid var(--blue-line);
+      border-radius: 0.10in;
+
+      background: rgba(255, 255, 255, 0.80);
+    }
+
+    .box h3 {
+      margin: 0 0 0.055in;
+
+      display: flex;
+      align-items: center;
+      gap: 0.06in;
+
+      color: #075ca8;
+      font-size: 13.4px;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .circle {
+      width: 0.27in;
+      height: 0.27in;
+      flex: 0 0 auto;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--blue);
+      color: #ffffff;
+
+      font-size: 16px;
+    }
+
+    .feeding ul {
+      margin: 0.02in 0 0 0.14in;
+      padding: 0;
+
+      font-size: 7.9px;
+      line-height: 1.17;
+    }
+
+    .feeding li {
+      margin-bottom: 0.025in;
+    }
+
+    .med {
+      border-color: var(--purple-line);
+    }
+
+    .med h3 {
+      color: var(--purple);
+      font-size: 12.2px;
+    }
+
+    .med .circle {
+      background: var(--purple);
+    }
+
+    .medTable {
+      display: grid;
+      grid-template-columns: 1.03in minmax(0, 1fr);
+
+      overflow: hidden;
+
+      border: 1px solid #dddddd;
+      border-radius: 0.08in;
+
+      font-size: 7.25px;
+      line-height: 1.12;
+    }
+
+    .mLabel,
+    .mText {
+      padding: 0.043in 0.052in;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .mLabel {
+      display: flex;
+      align-items: center;
+      gap: 0.035in;
+
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .safe {
+      background: #dff3d5;
+    }
+
+    .caution {
+      background: #fff0ae;
+    }
+
+    .avoid {
+      background: #ffd1cd;
+      color: #b40000;
+    }
+
+    .note {
+      margin: 0.035in 0 0;
+
+      font-size: 7.2px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* =========================================================
+       WHEN TO CALL
+    ========================================================= */
+
+    .callUs {
+      min-height: 0;
+      padding: 0.085in 0.13in;
+
+      display: grid;
+      grid-template-columns: 0.46in 1fr 1fr;
+      align-items: start;
+      gap: 0.11in;
+
+      overflow: hidden;
+
+      border: 1.35px solid #f56b6b;
+      border-radius: 0.11in;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff5f3,
+          #ffffff
+        );
+    }
+
+    .callIcon {
+      width: 0.38in;
+      height: 0.38in;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #e84949;
+      color: #ffffff;
+
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .callColumn h3 {
+      margin: 0 0 0.045in;
+
+      color: #c93030;
+
+      font-size: 15px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .callColumn ul {
+      margin: 0 0 0 0.14in;
+      padding: 0;
+
+      font-size: 8.15px;
+      line-height: 1.22;
+    }
+
+    .callColumn li {
+      margin-bottom: 0.02in;
+    }
+
+    .callSupport {
+      height: 100%;
+      padding-left: 0.11in;
+      border-left: 1px solid #f0b4b4;
+    }
+
+    .callSupport strong {
+      display: block;
+      margin-bottom: 0.04in;
+
+      color: var(--pink);
+
+      font-size: 9.7px;
+      text-transform: uppercase;
+    }
+
+    .callSupport p {
+      margin: 0;
+
+      font-size: 8.1px;
+      line-height: 1.23;
+    }
+
+    /* =========================================================
+       CAREGIVER MESSAGE
+    ========================================================= */
+
+    .matter {
+      min-height: 0;
+      padding: 0.085in 0.14in;
+
+      display: grid;
+      grid-template-columns: 0.53in minmax(0, 1fr) 0.74in;
+      align-items: center;
+      gap: 0.10in;
+
+      overflow: hidden;
+
+      border: 1.35px solid #ff8ab1;
+      border-radius: 0.10in;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff7fa,
+          #ffffff
+        );
+    }
+
+    .heart {
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .matter h3 {
+      margin: 0 0 0.04in;
+
+      color: var(--pink);
+
+      font-size: 15.5px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .matter p {
+      margin: 0;
+
+      font-size: 8.6px;
+      line-height: 1.22;
+    }
+
+    .carePic {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      color: var(--green);
+      font-size: 31px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15in;
+
+      color: var(--green);
+      font-family: Yellowtail, cursive;
+      font-size: 14px;
+    }
+
+    .footer::before,
+    .footer::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      max-width: 2.1in;
+
+      background: #76a76b;
+    }
+
+    /* =========================================================
+       SMALL SCREEN PREVIEW
+    ========================================================= */
+
+    @media screen and (max-width: 900px) {
+      .page {
+        transform: scale(0.82);
+        transform-origin: top center;
+        margin-bottom: -1.8in;
+      }
+    }
+
+    /* =========================================================
+       PRINT
+    ========================================================= */
+
+    @page {
+      size: 8.5in 11in;
+      margin: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 8.5in;
+        height: 11in;
+        background: #ffffff;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .page {
+        width: 8.5in;
+        height: 11in;
+        margin: 0;
+
+        overflow: hidden;
+        box-shadow: none;
+
+        page-break-after: avoid;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="toolbar">
+    <button type="button" onclick="window.print()">
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <main class="page">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <section class="top">
+      <div class="brand">
+        <img
+          src="senders-logo.png"
+          alt="Senders Pediatrics"
+          class="brandLogo"
+        >
+      </div>
+
+      <div class="headerCopy">
+        <div class="stageBadge" data-field="stage">
+          2 Weeks
+        </div>
+
+        <div class="script" data-field="eyebrow">
+          Your Guide to
+        </div>
+
+        <div class="wellness" data-field="main_title">
+          Wellness
+        </div>
+
+        <div class="tagline" data-field="tagline">
+          Helpful tips, milestones to look for, and reminders
+          along the way.
+        </div>
+
+        <div class="headerRule">
+          <span>🌿</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FOUR VERTICAL COLUMNS
+    ====================================================== -->
+
+    <section class="cardsGrid">
+
+      <article class="categoryCard growing" data-section="growing">
+        <div class="cardHeading">
+          <span class="cardHeadingIcon">🌱</span>
+          <span>Growing</span>
+        </div>
+
+        <div class="cardItems">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+
+        <div class="cardTip"></div>
+      </article>
+
+      <article class="categoryCard sleep" data-section="sleep">
+        <div class="cardHeading">
+          <span class="cardHeadingIcon">🌙</span>
+          <span>Sleep</span>
+        </div>
+
+        <div class="cardItems">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+
+        <div class="cardTip"></div>
+      </article>
+
+      <article
+        class="categoryCard development"
+        data-section="development"
+      >
+        <div class="cardHeading">
+          <span class="cardHeadingIcon">💜</span>
+          <span>Development</span>
+        </div>
+
+        <div class="cardItems">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+
+        <div class="cardTip"></div>
+      </article>
+
+      <article class="categoryCard fussiness" data-section="fussiness">
+        <div class="cardHeading">
+          <span class="cardHeadingIcon">☀️</span>
+          <span>Fussiness</span>
+        </div>
+
+        <div class="cardItems">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+
+        <div class="cardTip"></div>
+      </article>
+
+    </section>
+
+    <!-- =====================================================
+         FEEDING AND MEDICATIONS
+    ====================================================== -->
+
+    <section class="lower">
+      <div class="box feeding">
+        <h3>
+          <span class="circle">🍼</span>
+
+          <span data-field="feeding_title">
+            Feeding & Pumping Milestones
+          </span>
+        </h3>
+
+        <ul id="feedingList"></ul>
+      </div>
+
+      <div class="box med">
+        <h3>
+          <span class="circle">💊</span>
+
+          <span data-field="med_title">
+            Maternal Medication Guide (While Nursing)
+          </span>
+        </h3>
+
+        <div class="medTable" id="medTable"></div>
+
+        <div class="note" data-field="med_note">
+          This is not a complete list. Always consult your provider.
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EMERGENCY INFORMATION
+    ====================================================== -->
+
+    <section class="callUs">
+      <div class="callIcon">!</div>
+
+      <div class="callColumn">
+        <h3 data-field="call_title">
+          When to Call Us
+        </h3>
+
+        <ul>
+          <li>A rectal temperature of 100.4°F (38°C) or higher.</li>
+          <li>Significant trouble feeding or staying latched.</li>
+          <li>Persistent vomiting or trouble breathing.</li>
+        </ul>
+      </div>
+
+      <div class="callSupport">
+        <strong data-field="call_support_title">
+          Call us right away if your baby:
+        </strong>
+
+        <p data-field="call_support_text">
+          Will not wake to eat, seems truly lethargic, or has crying
+          that cannot be consoled.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CAREGIVER MESSAGE
+    ====================================================== -->
+
+    <section class="matter">
+      <div class="heart">💗</div>
+
+      <div>
+        <h3 data-field="matter_title">
+          You Matter, Too.
+        </h3>
+
+        <p data-field="matter_text">
+          Postpartum depression and anxiety are common and treatable.
+          Reach out anytime—we’re here for your whole family.
+        </p>
+      </div>
+
+      <div class="carePic">🌿</div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+      <span>💚</span>
+
+      <span data-field="footer_text">
+        We’re so happy to be on this journey with you!
+      </span>
+    </footer>
+
+  </main>
+
+  <script>
+    const TSV_URL =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTKLqSj8wV9j2TCmjLnnTYBSAsQ13kCzVD-HVa38XUbdE8fhLqNSZwXnRJTSD5G6g/pub?gid=1638244561&single=true&output=tsv";
+
+    const DEFAULT = {
+      sections: {
+        growing: [
+          [
+            "🍼",
+            "Feeding",
+            "8–12 feedings per day. Look for hunger cues—rooting, hand to mouth, and sucking motions."
+          ],
+          [
+            "⚖️",
+            "Weight",
+            "It is normal for babies to lose a little weight and regain it by 10–14 days."
+          ],
+          [
+            "🩲",
+            "Diapers",
+            "Expect 6–8 wet diapers and several stools daily."
+          ],
+          [
+            "❤️",
+            "Tummy Time",
+            "Start with a few minutes while awake and supervised."
+          ],
+          [
+            "☀️",
+            "Vitamin D",
+            "Give 400 IU daily. Carlson Drops are an easy office favorite."
+          ]
+        ],
+
+        sleep: [
+          [
+            "💤",
+            "Newborn Sleep",
+            "Newborns may sleep 14–17 hours per day in short stretches."
+          ],
+          [
+            "👶",
+            "Safe Sleep",
+            "Always place your baby flat on their BACK to sleep."
+          ],
+          [
+            "🛏️",
+            "Room-Share",
+            "Keep baby near you, but in their own crib or bassinet."
+          ],
+          [
+            "🧸",
+            "Soothing",
+            "Swaddling, white noise, gentle rocking, and a pacifier may help."
+          ]
+        ],
+
+        development: [
+          [
+            "👀",
+            "Looking at You",
+            "Newborns love faces. Your baby is already learning from you."
+          ],
+          [
+            "👂",
+            "Startle Reflex",
+            "Sudden movements or noises may startle your baby. This is normal."
+          ],
+          [
+            "👶",
+            "Umbilical Cord",
+            "It usually falls off within two weeks. A small scab is okay."
+          ],
+          [
+            "🧴",
+            "Diaper Rashes",
+            "For irritation, rinse wipes with warm water, air dry, and use barrier cream. Call if a rash does not improve."
+          ]
+        ],
+
+        fussiness: [
+          [
+            "🥺",
+            "Crying Is Normal",
+            "Healthy babies may cry for several hours each day."
+          ],
+          [
+            "🎵",
+            "Comfort",
+            "Try swaddling, rocking, skin-to-skin, and white noise."
+          ],
+          [
+            "🧠",
+            "Overstimulation",
+            "Bright lights, noise, and frequent changes can be overwhelming."
+          ],
+          [
+            "⏱️",
+            "15-Minute Rule",
+            "Try one soothing rhythm for 15 minutes before switching."
+          ],
+          [
+            "🧘",
+            "Calming Ideas",
+            "Hold baby on your shoulder and use paced bottle-feeding."
+          ]
+        ]
+      },
+
+      tips: {
+        growing: [
+          "Parent Tip",
+          "Look for a relaxed, sleepy baby after feeds. This is a good sign they are getting enough."
+        ],
+
+        sleep: [
+          "Good to Know",
+          "A 3–4 hour stretch at night may happen, but every baby is different."
+        ],
+
+        development: [
+          "Parent Tip",
+          "You cannot spoil a newborn. You are helping your baby feel safe."
+        ],
+
+        fussiness: [
+          "Good to Know",
+          "You are doing a great job. This phase is temporary."
+        ]
+      },
+
+      feeding: [
+        "Pacifier: Wait until baby has regained birth weight and breastfeeding is well-established.",
+        "Bottle: Introduce around 3–4 weeks. Have a partner offer it when possible.",
+        "Pumping prep: Add an extra session about two weeks before returning to work.",
+        "Partner’s role: Skin-to-skin, diaper changes, burping, and tummy time make a difference.",
+        "Storage: Breast milk may be refrigerated for up to four days or frozen for up to six months."
+      ],
+
+      meds: [
+        [
+          "✅ SAFE",
+          "Acetaminophen, Ibuprofen, Amoxicillin, Penicillin, Flonase, Saline Nasal Sprays, Famotidine, and Colace.",
+          "safe"
+        ],
+        [
+          "⚠️ USE CAREFULLY",
+          "Some birth control methods and decongestants may lower milk supply. Ask your provider.",
+          "caution"
+        ],
+        [
+          "🚫 AVOID",
+          "Aspirin, Accutane, Pepto-Bismol, Doxycycline, Dimetapp, and Ephedrine.",
+          "avoid"
+        ]
+      ]
+    };
+
+    function render(data = DEFAULT) {
+      Object.entries(data.sections).forEach(([key, items]) => {
+        const card = document.querySelector(
+          `[data-section="${key}"]`
+        );
+
+        if (!card) {
+          return;
+        }
+
+        card.querySelectorAll(".item").forEach((itemElement, index) => {
+          const item = items[index];
+
+          itemElement.innerHTML = item
+            ? `
+              <div class="itemIcon">${item[0]}</div>
+
+              <div class="itemText">
+                <b>${item[1]}:</b> ${item[2]}
+              </div>
+            `
+            : "";
+        });
+
+        const tip = data.tips[key] || ["", ""];
+
+        card.querySelector(".cardTip").innerHTML = `
+          <strong>💡 ${tip[0]}</strong>
+          <p>${tip[1]}</p>
+        `;
+      });
+
+      document.getElementById("feedingList").innerHTML =
+        data.feeding
+          .filter(Boolean)
+          .map((value) => {
+            const parts = value.split(":");
+
+            if (parts.length > 1) {
+              const label = parts.shift();
+
+              return `
+                <li>
+                  <b>${label}:</b>${parts.join(":")}
+                </li>
+              `;
+            }
+
+            return `<li>${value}</li>`;
+          })
+          .join("");
+
+      document.getElementById("medTable").innerHTML =
+        data.meds
+          .filter(Boolean)
+          .map(
+            (row) => `
+              <div class="mLabel ${row[2] || ""}">
+                ${row[0]}
+              </div>
+
+              <div class="mText">
+                ${row[1]}
+              </div>
+            `
+          )
+          .join("");
+    }
+
+    function parseTSV(text) {
+      const rows = text
+        .trim()
+        .split(/\r?\n/)
+        .map((row) => row.split("\t"));
+
+      const headers = rows
+        .shift()
+        .map((header) => header.trim().toLowerCase());
+
+      const get = (row, name) => {
+        const index = headers.indexOf(name);
+
+        return index >= 0
+          ? row[index] || ""
+          : "";
+      };
+
+      const data = JSON.parse(JSON.stringify(DEFAULT));
+
+      rows.forEach((row) => {
+        const type = get(row, "type").trim().toLowerCase();
+        const section = get(row, "section").trim().toLowerCase();
+        const title = get(row, "title");
+        const body = get(row, "body");
+        const icon = get(row, "icon");
+        const order = Number(get(row, "order") || 0);
+
+        if (
+          type === "item" &&
+          data.sections[section] &&
+          order > 0
+        ) {
+          data.sections[section][order - 1] = [
+            icon,
+            title,
+            body
+          ];
+        }
+
+        if (
+          type === "tip" &&
+          Object.prototype.hasOwnProperty.call(data.tips, section)
+        ) {
+          data.tips[section] = [
+            title,
+            body
+          ];
+        }
+
+        if (type === "feeding" && order > 0) {
+          data.feeding[order - 1] =
+            title + (body ? ": " + body : "");
+        }
+
+        if (type === "med" && order > 0) {
+          data.meds[order - 1] = [
+            title,
+            body,
+            section
+          ];
+        }
+
+        if (type === "field") {
+          const element = document.querySelector(
+            `[data-field="${section}"]`
+          );
+
+          if (element) {
+            element.innerHTML = body || title;
+          }
+        }
+      });
+
+      return data;
+    }
+
+    render(DEFAULT);
+
+    fetch(TSV_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Unable to load TSV data.");
+        }
+
+        return response.text();
+      })
+      .then((text) => {
+        render(parseTSV(text));
+      })
+      .catch(() => {
+        /*
+          Keep the default content visible when the spreadsheet
+          cannot be reached.
+        */
+      });
+  </script>
+</body>
+</html>
